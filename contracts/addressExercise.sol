@@ -15,11 +15,12 @@ contract Ad {
     function setPrice(uint newPrice) public{
         /*
             Exercise
-                the only address that can set price should be the creator of the add
+                the only address that can set price should be the creator of the ad
                 If a different address tries to set the price, the transaction should fail,
                     with the error message "only creator can set price"
                 **Hint you will need to use both msg.sender and require
          */
+        require(msg.sender== creator, "only creator can set price");
         price = newPrice;
     }
 }

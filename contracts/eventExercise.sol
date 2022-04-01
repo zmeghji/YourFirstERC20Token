@@ -7,6 +7,9 @@ contract DealerManagement {
     // (dealerId => isBlacklisted)
     mapping (uint => bool) blackListedDealers;
 
+    function blacklist(uint dealerId)public {
+        blackListedDealers[dealerId] = true;
+    }
     
     function provision(uint dealerId, string memory feature) public {
         /**
@@ -16,7 +19,11 @@ contract DealerManagement {
                 If the dealer is not blacklisted, the Provisioned event is emitted with the provided dealerId and feature
 
                 **Hint: Need to use the require keyword. Don't need to use if/else statements.
-         */            
+         */
+
+         require(!blackListedDealers[dealerId], "dealer blacklisted");
+
+         emit Provisioned(dealerId, feature);
     }
 
 

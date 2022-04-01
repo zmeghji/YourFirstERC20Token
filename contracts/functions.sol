@@ -21,5 +21,14 @@ contract Favorite {
             Now implement the same for a favorite boolean
             Hint: the type for boolean is bool
     */
+    bool public favoriteBool;
+
+    function getFavoriteBool() public view returns (bool){
+        return favoriteBool;
+    }
+
+    function setFavoriteBool(bool _favoriteBool) public {
+        favoriteBool = _favoriteBool;
+    }
     
 }

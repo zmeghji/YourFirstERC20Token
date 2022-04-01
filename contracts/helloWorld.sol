@@ -10,5 +10,7 @@ contract HelloWorld  //contract is similar to a class in C#/Java
             Declare a public field called meaningOfLife which returns 42
             Hint: the type for integer is uint
     */
+
+    uint public meaningOfLife = 42;
     
 }

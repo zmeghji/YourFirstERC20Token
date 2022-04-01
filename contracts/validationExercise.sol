@@ -10,9 +10,10 @@ contract Car {
         /*
             Exercise
                 If the provided _year is not between 1885 - 2022,
-                then fail with the error message "year not in range (1885-2022)
+                then fail with the error message "year not in range (1885-2022)"
             Hint: the "and" operator is &&
         */ 
+        require(_year >= 1885 && _year <= 2022, "year not in range (1885-2022)");
         year = _year;
     }
 }

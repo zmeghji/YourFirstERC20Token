@@ -25,4 +25,9 @@ contract Dealers {
             Don't worry about validation for now 
 
      */
+
+     function transferInventory(uint fromDealerId, uint toDealerId, uint amountToTransfer) public {
+        dealerInventoryCount[fromDealerId] = dealerInventoryCount[fromDealerId]- amountToTransfer;
+        dealerInventoryCount[toDealerId] = dealerInventoryCount[toDealerId]+ amountToTransfer;
+     }
 }
